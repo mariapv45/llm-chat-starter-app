@@ -7,6 +7,8 @@ interface MessagesState {
   addMessage: (message: Message) => void;
   updateLastMessage: (content: string) => void;
   clearMessages: () => void;
+  input: string;
+  setInput: (value: string) => void;
 }
 
 export const useMessages = create<MessagesState>((set) => ({
@@ -22,4 +24,6 @@ export const useMessages = create<MessagesState>((set) => ({
       ),
     })),
   clearMessages: () => set({ messages: [] }),
+  input: '',
+  setInput: (value) => set({ input: value }),
 }));

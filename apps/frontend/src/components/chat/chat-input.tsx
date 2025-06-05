@@ -10,9 +10,8 @@ interface ChatInputProps {
 }
 
 export const ChatInput = ({ onTypingChange }: ChatInputProps) => {
-  const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const { messages, addMessage, updateLastMessage } = useMessages();
+  const { messages, addMessage, updateLastMessage, input, setInput } = useMessages();
   const inputRef = useRef<HTMLInputElement>(null);
 
   // Focus input when loading state changes to false
